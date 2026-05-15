@@ -1,0 +1,23 @@
+{
+  "name": "awesome-otherside",
+  "description": "10 AI skills for Otherside ODK development — avatars, Morpheus networking, commerce, world travel, task flows, and more.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Diluk Angelo"
+  },
+  "homepage": "https://github.com/dilukangelosl/awesome-otherside",
+  "repository": "https://github.com/dilukangelosl/awesome-otherside",
+  "license": "MIT",
+  "skills": [
+    "otherside-quick-start",
+    "otherside-avatar-system",
+    "otherside-plugin-features",
+    "otherside-morpheus-networking",
+    "otherside-commerce-economy",
+    "otherside-templates",
+    "otherside-world-travel",
+    "otherside-task-flow",
+    "otherside-agentic-api",
+    "otherside-debugging"
+  ]
+}

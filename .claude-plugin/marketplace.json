@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "awesome-otherside",
+      "description": "10 AI skills for Otherside ODK development — avatars, Morpheus networking, commerce, world travel, task flows, and more.",
+      "repository": "https://github.com/dilukangelosl/awesome-otherside"
+    }
+  ]
+}
