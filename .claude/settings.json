@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsx .claude/hooks/skill-activation.ts",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npx tsx .claude/hooks/*)",
+      "Bash(node scripts/*)",
+      "Bash(bash scripts/*)"
+    ]
+  }
+}

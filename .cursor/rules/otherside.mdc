@@ -1,0 +1,53 @@
+---
+description: Otherside ODK development rules for Cursor
+globs: ["**/*.uasset", "**/*.umap", "**/*.py", "**/*.ts", "**/*.js", "**/*.json"]
+alwaysApply: true
+---
+
+# Otherside Development Kit — Cursor Rules
+
+## Platform Overview
+
+Otherside uses the **ODK (Otherside Development Kit)** built on Unreal Engine 5.5.4 with
+**Morpheus networking**. All development is Blueprint-only; do not add C++ ODK extensions.
+
+## Critical Rules
+
+### Networking
+- Use **Morpheus** blueprint nodes exclusively for any networked state
+- Never use Unreal native `Replicated` properties or RPC annotations
+- Use `Server_TransferDataObjects` (not the deprecated `Server_TransferObjects`)
+- Always provide OnSuccess and OnFailure callbacks for data transfers
+
+### Actor Pooling
+- Never call `DestroyActor()` on pooled actors
+- Always use `OthersideReturnToPool(Actor)` to return actors
+- Null all Morpheus array references before returning an actor to pool
+
+### Input Mapping (v7.0+)
+- Always override `GetDefaultInputMappingContexts()` in PlayerController for custom inputs
+
+### Commerce
+- Primary currency: ApeCoin (APE) on ApeChain
+- Token standard: ERC-1155
+- Vending machines support bulk buy, categorization, gamepad, and live affordability checks
+- Handle server grant failures with user-facing error messages
+
+## Avatar Specs (for asset pipeline work)
+- Max 50,000 triangles
+- Max 20MB file size (recommend <10MB)
+- Max 2048×2048 textures
+- 4 bone influences max per vertex
+- Format: gLTF 2.0 / GLB
+
+## Documentation
+- Full corpus: https://docs.otherside.xyz/llms-full.txt
+- Query: `GET https://docs.otherside.xyz/odk/quick-start?ask=<question>`
+
+## Skill Files
+Load these for in-depth context:
+- `skills/otherside-quick-start/SKILL.md` — setup & deployment
+- `skills/otherside-plugin-features/SKILL.md` — plugin reference
+- `skills/otherside-morpheus-networking/SKILL.md` — networking
+- `skills/otherside-commerce-economy/SKILL.md` — commerce & NFT
+- `skills/otherside-debugging/SKILL.md` — troubleshooting
